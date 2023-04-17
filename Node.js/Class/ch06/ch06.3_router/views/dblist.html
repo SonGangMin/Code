@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    데이터베이스 목록 보기
+    <a href="/user/dbinsert">사용자등록</a>
+    <table border="1">
+      {% for item in rows %}
+      <tr>
+        <td>{{item.userID}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.birthYear}}</td>
+        <td>{{item.address}}</td>
+        <td>{{item.mobile1}}</td>
+        <td><a href="/user/dbdelete/{{item.userID}}">삭제</a></td>
+        <td><a href="/user/dbupdate/{{item.userID}}">수정</a></td>
+      </tr>
+      {% else %}
+      <div>아무 내용 없음</div>
+      {% endfor %}
+    </table>
+  </body>
+</html>

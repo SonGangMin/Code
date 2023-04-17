@@ -1,0 +1,22 @@
+{% extends 'layout.html' %} {% block content %}
+<hr />
+<ul>
+  {% for item in phoneBook %}
+  <li>{{item.name}}</li>
+  <li>{{item.age}}</li>
+  <li>{{item.job}}</li>
+  <li>{{item.phone}}</li>
+  <hr />
+  {% else %}
+  <li>item에 목록이 더이상 없습니다.</li>
+  {% endfor %}
+</ul>
+
+{% for fruit, color in fruits %} Did you know that {{fruit}} is {{color}}?<br />
+{% endfor %} {% endblock %} {% block script %}
+<script>
+  let name = "김병제";
+  console.log(name);
+</script>
+<script src="/js/main.js"></script>
+{% endblock %}

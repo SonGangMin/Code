@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>연습</title>
+  </head>
+  <body background="images/음바페.jpeg">
+    <div style="background-color: cyan">
+      <h1 align="center">음바페 호텔</h1>
+      <img
+        src="images/음바페.jpeg"
+        alt="dd"
+        align="right"
+        width="200"
+        height="200"
+        hspace="50"
+        vspace="50"
+      /><br />
+    </div>
+    <hr />
+    <div style="background-color: antiquewhite">
+      <form action="/">
+        <label for="">이름</label> :
+        <input
+          type="text"
+          name="name"
+          id=""
+          placeholder="이름을입력해~"
+          maxlength="5"
+        />
+        <br />
+
+        <label for="">비밀번호</label> :
+        <input type="password" name="password" id="" maxlength="10" /> <br />
+        <label for="">주소</label> :
+        <input type="text" name="address" size="50" /> <br />
+        <label for="">전화번호</label> :
+        <input
+          type="tel"
+          name="tel"
+          id=""
+          pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"
+        /><br />
+        <label for="">이메일</label> :
+        <input type="email" name="email" id="" /><br />
+        <label for="">비고</label> :
+        <textarea name="address" cols="30" rows="10"></textarea> <br />
+        <label for="">성별</label> : <input type="radio" name="sex" id="" />남자
+        <input type="radio" name="sex" id="" />여자 <br />
+        <label for="">추가옵션</label> :
+        <input type="checkbox" name="select1" id="" />더블베드
+        <input type="checkbox" name="select1" id="" />아가씨서비스
+        <input type="checkbox" name="select3" id="" />룸서비스 <br />
+        <fieldset style="background-color: rgb(241, 211, 41)">
+          <legend>선택옵션</legend>
+          <label for="">방 갯수</label> :
+          <select name="rooms" id="">
+            <optgroup label="싼 방">
+              <option value="1">1개</option>
+              <option value="2">2개</option>
+            </optgroup>
+            <optgroup label="비싼 방">
+              <option value="3">3개</option>
+              <option value="4">4개</option>
+            </optgroup>
+          </select>
+          <label for="">화장실 수</label> :
+          <select name="baths" id="">
+            <option value="1">1개</option>
+            <option value="2">2개</option>
+            <option value="3">3개</option>
+            <option value="4">4개</option>
+          </select>
+          <label for="">직업</label> :
+          <input type="text" list="job" />
+          <datalist id="job">
+            <option value="공무원">공무원</option>
+            <option value="회사원">회사원</option>
+          </datalist>
+        </fieldset>
+        <input type="submit" value="완료" />
+        <input type="reset" value="리셋" />
+      </form>
+      <fieldset style="background-color: rgb(197, 117, 19)">
+        <legend>방 요금</legend>
+        <form oninput="z.value=parseInt(x.value)*parseInt(y.value)*1000000">
+          방갯수 <input type="range" name="x" value="0" min="0" max="4" />
+          <br />
+          화장실수 <input type="number" name="y" value="1" min="0" max="4" />
+          <br />
+          요금합계 : $<output align="right" name="z"></output>
+        </form>
+      </fieldset>
+    </div>
+    <form action="">
+      <fieldset sytle="background-color:yellow">
+        <a href="mailto:skm0628@naver.com">Mailto</a>
+      </fieldset>
+    </form>
+  </body>
+</html>

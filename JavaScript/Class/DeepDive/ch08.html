@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body>
+    <h2>자바스크립트 array for문으로 출력하기</h2>
+    <p>for문 loop결과값</p>
+    <ul></ul>
+    <div id="test"></div>
+
+    <script>
+      //   const fruits = ["샤인머스캣", "포도", "수박", "멜론", "사과"];
+      //   let fruitsLength = fruits.length;
+      //   let text = "<ul>";
+      //   for (let i = 0; i < fruitsLength; i++) {
+      //     text += "<li>" + fruits[i] + "</li>";
+      //   }
+      //   text += "</ul>";
+
+      //   document.getElementById("test").innerHTML = text;
+      //   console.log(text);
+
+      const ulEl = document.querySelector("ul");
+      for (let i = 0; i < 3; i++) {
+        const a = document.createElement("li");
+        a.textContent = `list-${i + 1}`;
+        a.addEventListener("click", function () {
+          console.log(a.textContent);
+          alert(a.textContent);
+        });
+        ulEl.appendChild(a);
+      }
+      console.log(ulEl);
+    </script>
+  </body>
+</html>

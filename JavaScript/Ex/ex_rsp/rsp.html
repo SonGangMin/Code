@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>가위바위보~dd</title>
+  </head>
+  <style>
+    img {
+      width: 550px;
+      height: 550px;
+    }
+    .main,
+    .result {
+      justify-content: center;
+      display: flex;
+      margin: 10px;
+    }
+    button:hover {
+      background: lightsalmon;
+    }
+    button {
+      width: 80px;
+      height: 80px;
+      font-size: 20px;
+      margin: 10px;
+      background: beige;
+    }
+    .btn {
+      display: flex;
+      justify-content: center;
+    }
+  </style>
+  <body>
+    <div class="main">
+      <img src="../../../images/가위바위보.jpeg" id="computer" />
+    </div>
+    <div class="btn">
+      <button id="scissor">가위</button>
+      <button id="rock">바위</button>
+      <button id="paper">보</button>
+      <button id="reset">리셋</button>
+    </div>
+    <div class="result"></div>
+    <script src="rsp.js"></script>
+    <!-- <script>
+      var scissor = document.getElementById("scissor");
+      var rock = document.getElementById("rock");
+      var paper = document.getElementById("paper");
+      var user, result, com;
+      let final = document.querySelector(".result");
+      function sum(a) {
+        if (a == -1 || a == 2) {
+          return "졌다!ㅋㅋ";
+        } else if (a == 0) {
+          return "비겼다!";
+        } else {
+          return "이겼다!ㅊㅊ";
+        }
+      }
+      function ran() {
+        com = Math.floor(Math.random() * 3) + 1;
+      }
+      function change() {
+        if (com == 1) {
+          document.getElementById("computer").src = "../../../images/가위.jpg";
+        } else if (com == 2) {
+          document.getElementById("computer").src = "../../../images/바위.jpg";
+        } else {
+          document.getElementById("computer").src = "../../../images/보.jpg";
+        }
+      }
+
+      scissor.addEventListener("click", function () {
+        var user = 1;
+        ran();
+        result = user - com;
+        change();
+        final.innerHTML = `<h1>${sum(result)}`;
+      });
+      rock.addEventListener("click", function () {
+        var user = 2;
+        ran();
+        result = user - com;
+        change();
+        final.innerHTML = `<h1>${sum(result)}`;
+      });
+      paper.addEventListener("click", function () {
+        var user = 3;
+        ran();
+        result = user - com;
+        change();
+        final.innerHTML = `<h1>${sum(result)}`;
+      });
+    </script> -->
+  </body>
+</html>

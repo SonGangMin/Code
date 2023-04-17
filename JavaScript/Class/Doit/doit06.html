@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>06</title>
+    <style>
+      .modal.active {
+        display: inline;
+      }
+      .modal {
+        display: none;
+      }
+      #modalbox {
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        position: fixed;
+        background-color: blue;
+        color: white;
+        width: 140px;
+        height: 140px;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="modalbox">프로필보기</button>
+    <div class="modal">
+      <button>blue</button>
+      <button class="green">green</button><br />
+      <div id="contents">
+        <input type="text" id="word" />
+        <button id="bttn">글자수확인</button>
+      </div>
+    </div>
+    <div id="result"></div>
+    <script src="doit06.js"></script>
+  </body>
+</html>

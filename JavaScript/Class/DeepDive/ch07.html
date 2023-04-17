@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>짝수or홀수</title>
+    <script src="ch04-1.js"></script>
+  </head>
+  <body>
+    <script>
+      bgChange();
+    </script>
+
+    <input
+      type="text"
+      oninput="result()"
+      placeholder="숫자를 입력하시오"
+      class="input1"
+    />
+    <input
+      type="text"
+      oninput="result()"
+      placeholder="숫자를 입력하시오"
+      class="input2"
+    /><br />
+    <button onclick="result()">결과는~?</button>
+    <div class="hi"></div>
+
+    <script>
+      function result() {
+        let num1 = document.querySelector(".input1"),
+          num2 = document.querySelector(".input2"),
+          hi = document.querySelector(".hi");
+        let Num1 = +num1.value;
+        let Num2 = +num2.value;
+        console.log(typeof Num1);
+        if (Num1 % 2 === 0) {
+          if (Num2 % 2 === 0) {
+            hi.innerHTML = `${Num1}과 ${Num2}는 짝수입니다`;
+          } else {
+            hi.innerHTML = `${Num1}은 짝수이고 ${Num2}는 홀수입니다`;
+          }
+        } else {
+          if (Num2 % 2 !== 0) {
+            hi.innerHTML = `${Num1}과 ${Num2}는 홀수입니다`;
+          } else {
+            hi.innerHTML = `${Num1}은 홀수이고 ${Num2}는 짝수입니다`;
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

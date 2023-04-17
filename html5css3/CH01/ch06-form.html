@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>tt</title>
+  </head>
+  <body>
+    <form action="/" method="POST">
+      <label>이름</label>:
+      <input
+        type="text"
+        name="name"
+        value=""
+        maxlength="5"
+        placeholder="이름을 입력하시오"
+      /><br />
+      <label>비밀번호</label>:
+      <input
+        type="password"
+        name="password"
+        value=""
+        maxlength="5"
+        autofocus
+      /><br />
+      <label>주소</label>: <input type="dd" size="50" name="address" /><br />
+      <label>내용</label>:
+      <textarea name="content" id="" cols="30" rows="3"></textarea>
+      <br />
+      <label for="">성별</label>:
+      <input
+        type="radio"
+        name="sex"
+        value="여자"
+      />여자 <input type="radio" name="sex" value="남자" />남자 <br />
+      추가옵션:
+      <input type="checkbox" name="addoption" value="더블배드" />더블베드
+      <input type="checkbox" name="addoption2" value="조식" />조식
+      <input type="checkbox" name="addoption3" value="룸서비스" />룸서비스<br />
+      <fieldset>
+        <legend>선택옵션</legend>
+        <label for="">갯수: </label
+        ><select name="qty" id="" multiple size="6">
+          <optgroup label="1~2개">
+            <option value="">1</option>
+            <option value="">2</option>
+          </optgroup>
+          <optgroup label="3~4개">
+            <option selected value="">3</option>
+            <option value="">4</option>
+          </optgroup>
+        </select>
+        <label for="">색깔: </label
+        ><select name="color" id="">
+          <option value="">빨</option>
+          <option value="">노</option>
+          <option value="">파</option>
+          <option value="">초</option>
+        </select>
+        직업:<input type="text" list="job" />
+        <datalist id="job">
+          <optgroup label="직업">
+            <option label="공무원" value="공무원"></option>
+            <option label="회사원" value="회사원"></option>
+          </optgroup>
+        </datalist>
+      </fieldset>
+      <br />
+      tel<input type="tel" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" required />
+      email<input type="email" /> 
+      email<input type="email" value="hi" readonly/> 
+      datetime<input type="datetime-local" name="" id=""/>
+      color<input type="color" /> 
+      file<input type="file" multiple="" />
+      number<input type="number" step="2"/>
+      <br />
+      <br />
+      <input type="submit" value="submit" />
+      <input type="reset" value="reset" />
+      <input type="button" value="button" disabled="disabled"/>
+    </form>
+    <form oninput="z.value=parseInt(x.value)+parseInt(y.value)">
+      <fieldset>
+        <legend>output 요소를 지정하세요</legend>
+        0 <input type="range" name="x" value="100" min="0" max="1000" /> 100 +
+        <input type="number" name="y" value="1000" disabled="disabled"/> =
+        <output name="z"> </output>
+      </fieldset>
+    </form>
+  </body>
+</html>

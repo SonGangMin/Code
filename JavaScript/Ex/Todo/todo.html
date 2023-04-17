@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Todo</title>
+  </head>
+  <body>
+    <div class="header"><h1>주소록</h1></div>
+    <form action="" id="todo-form">
+      이름 : <input type="text" id="todo-input" /><br />
+      전화번호 : <input type="tel" id="todo-input-tel" /><br />
+      이메일 : <input type="email" id="todo-input-email" />
+      <button type="submit">등록</button>
+    </form>
+    <ul id="todo-list"></ul>
+    <script>
+      let todoSet = [];
+      const form = document.getElementById("todo-form");
+      const input = document.getElementById("todo-input");
+      const inputTel = document.getElementById("todo-input-tel");
+      const inputEmail = document.getElementById("todo-input-email");
+      const list = document.getElementById("todo-list");
+
+      const addTodo = function () {
+        const todoText = input.value;
+        const todoTel = inputTel.value;
+        const todoEmail = inputEmail.value;
+        if (todoText === "") {
+          alert("할일을 입력해");
+          return;
+        }
+        const todo = {
+          id: todoSet.length + 1,
+          text: todoText,
+          tel: todoTel,
+          email: todoEmail,
+        };
+        todoSet.push(todo);
+        console.log(todo.id);
+
+        const li = document.createElement("li");
+        li.innerHTML = `이름 : <strong>${todoText}</strong> <br>전화번호 : ${todoTel} <br>이메일 : ${todoEmail}
+        <button class='delete' data-id='${todo.id}'>삭제</button>`;
+        list.appendChild(li);
+      };
+      function deleteTodoById(id) {
+        todoSet = todoSet.filter((todo) => todo.id !== id);
+        rendertodoSet();
+      }
+      function rendertodoSet() {
+        list.innerHTML = "";
+        todoSet.forEach((todo) => {
+          const li = document.createElement("li");
+          li.innerHTML = `이름 : <strong>${todo.text}</strong> <br>전화번호 : ${todo.tel} <br>이메일 : ${todo.email}
+        <button class="delete" data-id='${todo.id}'>삭제</button>`;
+          list.appendChild(li);
+        });
+      }
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        addTodo();
+      });
+      list.addEventListener("click", (event) => {
+        if (event.target.classList.contains("delete")) {
+          const id = Number(event.target.dataset.id);
+          deleteTodoById(id);
+        }
+      });
+    </script>
+  </body>
+</html>

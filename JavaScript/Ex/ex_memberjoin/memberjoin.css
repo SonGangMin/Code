@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url(배경3.jpeg);
+  background-size: cover;
+}
+
+.body {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 80%;
+  justify-content: center;
+  align-items: center;
+}
+.tab {
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+  margin: 30px;
+  align-items: center;
+  background-color: rgb(241, 241, 234);
+  border-radius: 20px;
+}
+#info {
+  width: 60%;
+}
+.top {
+  display: flex;
+  width: 100%;
+  height: 80px;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: blueviolet;
+  border-radius: 20px;
+  background-color: rgb(243, 247, 214);
+}
+ul {
+  list-style: none;
+}
+.content1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.content1 li {
+  font-size: 1em;
+  line-height: 2;
+}
+.content1 label {
+  display: inline-block;
+  width: 100%;
+}
+.content1 input {
+  width: 100%;
+  padding: 3px;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  /* display: block; */
+  margin-bottom: 3px;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid blue;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.foot {
+  display: flex;
+  justify-content: space-around;
+}
+
+.submit {
+  background-color: skyblue;
+  border-color: transparent;
+  color: white;
+  margin-top: 20px;
+  width: 100px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+.submit:hover {
+  background-color: rgb(71, 128, 212);
+  cursor: pointer;
+}
+.submit2 {
+  background-color: lightcyan;
+  border-color: transparent;
+  color: grey;
+  margin-top: 20px;
+  width: 100px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+.submit2:hover {
+  cursor: wait;
+}
+.cancle {
+  background-color: skyblue;
+  border-color: transparent;
+  color: white;
+  margin-top: 20px;
+  width: 100px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+.cancle:hover {
+  background-color: rgb(71, 128, 212);
+  cursor: pointer;
+}
+.delButton {
+  background-color: lightcoral;
+  border-color: transparent;
+  color: white;
+  font-size: 15px;
+  width: 100px;
+  margin-left: 80px;
+}
+.delButton:hover {
+  cursor: pointer;
+  background-color: red;
+}
+#content2 li {
+  font-size: 15px;
+}
+.bold {
+  font-weight: bold;
+}
+.error {
+  color: red;
+  font-size: 14px;
+  font-style: italic;
+}

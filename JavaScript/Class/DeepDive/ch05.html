@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Chapter05</title>
+    <script src="ch04-1.js"></script>
+    <script src="ch04-2.js"></script>
+  </head>
+  <body>
+    <script>
+      bgChange();
+    </script>
+    <input type="text" placeholder="원하는 배수" class="multiple" /><br />
+    <input type="text" oninput="result();" placeholder="숫자" class="number" />
+    <button onclick="result()">입력</button>
+    <div class="hi"></div>
+    <script>
+      function result() {
+        let mulNum = document.querySelector(".multiple"),
+          num = document.querySelector(".number"),
+          hi = document.querySelector(".hi");
+
+        let num2 = parseInt(num.value);
+        let mulNum2 = mulNum.value;
+        if (num2 % mulNum2 == 0) {
+          hi.innerHTML = `${num2}은 ${mulNum2}의 배수다`;
+        } else {
+          hi.innerHTML = `${num2}은 ${mulNum2}의 배수가 아니다`;
+        }
+      }
+    </script>
+  </body>
+</html>

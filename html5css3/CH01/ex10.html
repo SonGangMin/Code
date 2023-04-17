@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>조합 선택자</title>
+    <style type="text/css">
+      /* 멀티레벨 */
+      .txt3 p {
+        color: #f0f;
+      } /* 하위 모든 p 선택 */
+      .txt3 > p {
+        font-size: 50px;
+      } /*자식만 선택*/
+      .txt3_1 > p {
+        text-decoration: underline;
+      } /* 손자만 선택 */
+      .txt3_2 > p {
+        font-size = 25px;
+      } /* 증손자만 선택 */
+      .txt3_1 p {
+        border: 1px solid #000;
+      } /*손자와 증손자 선택*/
+      .txt3 > div > div > p:nth-child(2) {
+        font-size: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="txt3">
+      <p>자식</p>
+      <div class="txt3_1">
+        <p>손자</p>
+        <p>하이</p>
+        <div class="txt3_2">
+          <p>증손자</p>
+          <p>증손녀</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

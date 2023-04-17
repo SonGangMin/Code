@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>사용자등록</title>
+  </head>
+  <body>
+    <form action="/user/dbupdate/{{result.userID}}" method="post">
+      아이디 :
+      <input
+        type="text"
+        name="userID"
+        readonly
+        value="{{result.userID}}"
+      /><br />
+      이름 : <input type="text" name="name" value="{{result.name}}" /><br />
+      생일 :
+      <input type="text" name="birthYear" value="{{result.birthYear}}" /><br />
+      주소 : <input type="text" name="addr" value="{{result.addr}}" /><br />
+      전화1 :
+      <input type="text" name="mobile1" value="{{result.mobile1}}" /><br />
+      전화2 :
+      <input type="text" name="mobile2" value="{{result.mobile2}}" /><br />
+      키 : <input type="text" name="height" value="{{result.height}}" /><br />
+      <button type="submit">사용자 수정</button>
+    </form>
+    <a href="/user/dblist">목록으로가기</a>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>상하좌우움직이기</title>
+    <style>
+      #modal-box {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+        display: none;
+        justify-content: center;
+        align-items: center;
+      }
+      #modal-box.active {
+        display: flex;
+      }
+      #box {
+        width: 100px;
+        height: 100px;
+        background-color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <p>사각형 내부 클릭</p>
+    <div id="box">box</div>
+    <script>
+      let lef = 0;
+      let top1 = 0;
+      const body = document.body;
+      const box = document.querySelector("#box");
+      // box.addEventListener('click', (e)=>{
+      //     console.log(e);
+      // })
+      body.addEventListener("keydown", (e) => {
+        console.log(typeof e.key);
+        if (e.key == "d") {
+          box.style.position = "absolute";
+          lef += 20;
+          box.style.left = lef + "px";
+          //console.log(box.style.left);
+        } else if (e.key == "a") {
+          box.style.position = "absolute";
+          lef -= 20;
+          box.style.left = lef + "px";
+        } else if (e.key == "s") {
+          box.style.position = "absolute";
+          top1 += 20;
+          box.style.top = top1 + "px";
+        } else if (e.key == "w") {
+          box.style.position = "absolute";
+          top1 -= 20;
+          box.style.top = top1 + "px";
+        }
+      });
+    </script>
+  </body>
+</html>

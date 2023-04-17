@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>현재 날짜와 시각은?</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: left;
+    }
+    #container {
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: left;
+    }
+    #container div {
+      border: 1px dashed black;
+      margin: 10px;
+    }
+    #today {
+      font-size: 1.2em;
+    }
+    #clock {
+      font-size: 1em;
+    }
+  </style>
+  <body>
+    <div id="container">
+      <div id="today">
+        <!-- 현재 날짜 -->
+      </div>
+      <div id="clock">
+        <!-- 현재시간 -->
+      </div>
+    </div>
+    <script src="doit08_2.js"></script>
+  </body>
+</html>

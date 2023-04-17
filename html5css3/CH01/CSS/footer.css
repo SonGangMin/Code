@@ -1,0 +1,137 @@
+body {
+  font-family: "맑은 고딕";
+  margin: 0;
+  display: grid;
+  font-size: 14px;
+}
+
+main {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: blue;
+  font-size: 200%;
+  font-weight: bold;
+}
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  border: 1px solid yellow;
+}
+.topnav a {
+  float: left;
+  text-decoration: none;
+  color: white;
+  padding: 14px 16px;
+  text-align: center;
+  display: block;
+}
+
+.topnav a:hover {
+  color: black;
+  background-color: #ddd;
+}
+
+.footer {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 50px;
+  color: #fff;
+  background-color: #995510;
+}
+
+.footer > * {
+  flex: 1 100%;
+}
+
+.left-area {
+  margin-right: -12px;
+}
+.left-area p {
+  padding-right: 200%;
+}
+.right-area {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-flow: row wrap;
+}
+.right-area > * {
+  flex: 1 50%;
+  margin-right: 1.25em;
+}
+.box a {
+  color: #999;
+  border: 1px solid blue;
+}
+.link-area {
+}
+.search-box input {
+  height: 36px;
+}
+.btn {
+  border: none;
+  background-color: darkorange;
+  color: #fff;
+  padding: 12px 36px;
+}
+.social {
+  margin-top: 2.2em;
+}
+.social a {
+  background: darkblue;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.social i {
+  color: hotpink;
+  padding: 10px 12px;
+  font-size: 20px;
+}
+
+.footer ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.footer li {
+  line-height: 1.2em;
+}
+
+.footer a {
+  text-decoration: none;
+}
+
+@media screen and (min-width: 600px) {
+  .right-area > * {
+    flex: 1;
+  }
+  .left-area {
+    flex: 1 0px;
+  }
+  .right-area {
+    flex: 2 0px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .footer {
+    padding: 15px;
+  }
+  main {
+    font-style: 55px;
+  }
+}

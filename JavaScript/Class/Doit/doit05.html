@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DOM</title>
+  </head>
+  <body>
+    <h1 id="title">내 소개</h1>
+    <img src="../../images/1.jpg" width="300px" />
+    <div id="desc">
+      <div class="user1">
+        이름 :
+        <input
+          id="sname"
+          onclick="makeReadonly()"
+          ondblclick="makeWriteable()"
+        />
+      </div>
+      <p class="user cgf">주소 : 대구광역시 동구</p>
+      <p class="user">연락처 : 123 456</p>
+    </div>
+    <button id="btn">클릭</button>
+    <button class="change">사진바꾸기</button>
+    <script>
+      let img1 = document.querySelector("img");
+      let btn = document.querySelector(".change");
+      let btn2 = document.querySelector("#btn");
+      btn2.onclick = function () {
+        let classlist = document.querySelector("#desc .user");
+        classlist.classList.add("dasdf");
+        console.log(classlist.classList);
+      };
+      img1.onclick = () => (img1.src = "../../images/음바페.jpeg");
+      btn.addEventListener("click", function () {
+        document.querySelector("img").src = "../../images/2.jpg";
+      });
+
+      //   let name = document.querySelector(".user1");
+      //   name.onclick = () => (name.innerHTML = '<input type="text" />');
+
+      function makeReadonly() {
+        let sname = document.querySelector("#sname");
+        sname.readOnly = true;
+      }
+
+      function makeWriteable() {
+        let sname = document.querySelector("#sname");
+        sname.readOnly = false;
+        sname.style = "background-color:beige; color:blue";
+        sname.value = "";
+      }
+    </script>
+  </body>
+</html>

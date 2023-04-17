@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>사용자등록</title>
+  </head>
+  <body>
+    <form action="/user/dbinsert" method="post">
+      아이디 : <input type="text" name="userID" /><br />
+      이름 : <input type="text" name="name" /><br />
+      생일 : <input type="text" name="birthYear" /><br />
+      주소 : <input type="text" name="addr" /><br />
+      전화1 : <input type="text" name="mobile1" /><br />
+      전화2 : <input type="text" name="mobile2" /><br />
+      키 : <input type="text" name="height" /><br />
+      <button type="submit">사용자 등록</button>
+    </form>
+    <a href="/user/dblist">목록으로가기</a>
+  </body>
+</html>

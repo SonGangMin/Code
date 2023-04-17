@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>이벤트 버블링과 캡쳐링</title>
+  </head>
+  <body>
+    Body
+    <div>
+      DIV
+      <section>
+        SECTION
+        <p>P</p>
+      </section>
+    </div>
+    <script>
+      const elements = document.querySelectorAll("*");
+      for (let element of elements) {
+        element.addEventListener("click", (e) => {
+          console.log(
+            `event.target : ${e.target.tagName}, event.currentTarget : ${e.currentTarget.tagName}`
+          );
+        });
+      }
+    </script>
+  </body>
+</html>

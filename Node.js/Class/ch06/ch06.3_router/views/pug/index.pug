@@ -1,0 +1,31 @@
+extends body
+
+block content
+    include header
+
+    h1= title 
+
+    style. 
+        h1{
+            font-size:60px;
+            color: red;
+        }
+    script.
+        const message = '퍼그'
+        alert(message)
+    p 환영합니다. #{title}
+    button(class=title, type='submit') 전송
+    input(placeholder = title + '연습')
+
+    ul
+        each fruit,index in fr
+            li=fruit+(index+1)
+
+    if isLoggedIn
+        div 로그인 되었습니다.
+    else
+        div 로그인 필요
+
+    p #{userid}
+
+    include footer

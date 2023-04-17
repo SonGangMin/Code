@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>키보드키</title>
+  </head>
+  <style>
+    #result {
+      text-align: center;
+    }
+  </style>
+  <body>
+    <h1>키보드의 아무 키나 눌러봐~</h1>
+
+    <div id="result"></div>
+    <script>
+      const body = document.body;
+      const result = document.querySelector("#result");
+
+      body.addEventListener("keydown", (a) => {
+        result.innerText = `code : ${a.code}, key: ${a.key}`;
+      });
+    </script>
+  </body>
+</html>

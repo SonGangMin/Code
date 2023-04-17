@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>로그인</title>
+  </head>
+  <body>
+    ID : <input type="text" placeholder="ID입력" class="id" /><br />
+    PW : <input type="password" placeholder="비밀번호 입력" class="pw" /><br />
+    <button onclick="login()">로그인</button>
+    <div class="result"></div>
+
+    <script>
+      const id = "work";
+      const pw = "rootroot";
+      function login() {
+        let inputID = document.querySelector(".id").value,
+          inputPW = document.querySelector(".pw").value;
+        console.log("입력ID :", inputID.value);
+        console.log("입력PW :", inputPW.value);
+        res = document.querySelector(".result");
+        console.log(typeof id);
+        if (id == inputID) {
+          res.innerHTML = "아이디는 맞습니다";
+          if (pw == inputPW) {
+            res.innerHTML = `${inputID}님 로그인 성공 입니다`;
+            location.href = "http://www.daum.net";
+          } else {
+            alert(`${inputID}님 비번확인하세요`);
+            // res.innerHTML = `${inputID}님 비번확인하세요`;
+            location.reload();
+          }
+        } else {
+          alert(`${inputID}님 아뒤확인하세요`);
+          //   res.innerHTML = "아뒤가 틀렸네요";
+          location.reload();
+        }
+      }
+    </script>
+  </body>
+</html>

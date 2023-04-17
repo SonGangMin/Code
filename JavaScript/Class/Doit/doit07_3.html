@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>노드 삭제하기</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    #cart {
+      margin: 50px auto;
+      width: 600px;
+      padding: 10px 20px;
+      border: 1px solid black;
+    }
+    #cart h1 {
+      margin-bottom: 20px;
+    }
+    #products p {
+      font-size: 1.2em;
+      line-height: 3;
+    }
+    p > span {
+      color: #ccc;
+      margin-left: 0.8em;
+      font-weight: bold;
+    }
+    p > span:hover {
+      color: red;
+      cursor: pointer;
+    }
+  </style>
+  <body>
+    <div id="cart">
+      <h1>장바구니</h1>
+      <div id="products">
+        <p>
+          <span>&cross;</span>
+          Html+Css+Javascript 웹 표준의 정석
+        </p>
+        <p><span>&cross;</span>리액트 프로그래밍</p>
+        <p><span>&cross;</span>타입스크립트</p>
+      </div>
+    </div>
+    <script src="doit07_3.js"></script>
+  </body>
+</html>

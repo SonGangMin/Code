@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body>
+    <script src="ch04-1.js"></script>
+    <!-- <button onclick="confirm('알림메시지')">클릭</button>
+    <button onclick="prompt('안녕','ㅎㅇ')">prompt</button> -->
+    <!-- <div class="myClass">
+      <ul>
+        <li>111</li>
+        <li>2222</li>
+        <li>3333</li>
+      </ul> -->
+    </div>
+    <span style="color: white">점수 : </span>
+    <input
+      type="text"
+
+      oninput="score();"
+      class="score"
+    />
+    <button onclick="score()">입력</button>
+    <div class="result"></div>
+    <script>
+      bgChange();
+      function score() {
+        let userNumber = document.querySelector(".score"),
+          result = document.querySelector(".result");
+        let score = parseInt(userNumber.value);
+
+        if (userNumber.value != '') {
+          if (userNumber.value % 3 === 0) {
+            result.innerHTML = "3의 배수다";
+          } else{
+            result.innerHTML = "3의 배수가 아니다";
+          }
+        } else if(userNumber.value == ''){
+          result.innerHTML = "잘못입력했다";
+        }
+      }
+
+      // function score() {
+      //   let inputScore = document.querySelector(".score"),
+      //     result = document.querySelector(".result");
+      //   let score = inputScore.value;
+      //   if (score < 0 || score > 100) {
+      //     result.innerHTML = "잘못 입력하였습니다.";
+      //   } else if (score > 90) {
+      //     result.innerHTML = "A학점 입니다.";
+      //   } else {
+      //     result.innerHTML = "낙제입니다.";
+      //   }
+      // }
+
+      // var element = document.querySelector(".myClass");
+      // console.log(element);
+      // let sum = add(10, 200);
+      // document.write(sum);
+      // let a = prompt("나이을입력해");
+      // let b = parseInt(a);
+      // console.log(typeof b);
+      // if (b < 30) {
+      //   document.write("<h1><br>20대이하입니다");
+      // } else if (b > 29) {
+      //   document.write("<h1><br>30살이상입니다");
+      // } else {
+      //   document.write(`<h1><br> ${a}는 숫자가 아닙니다`);
+      // }
+      // document.write(a);
+      // const f = { name: "eee" };
+      // console.log(f);
+      // f.name = "dddd";
+      // console.log(f);
+    </script>
+  </body>
+</html>
