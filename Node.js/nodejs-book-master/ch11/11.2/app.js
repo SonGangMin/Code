@@ -17,7 +17,7 @@ const passportConfig = require("./passport");
 
 const app = express();
 passportConfig(); // 패스포트 설정
-app.set("port", process.env.PORT || 8001);
+app.set("port", 3088);
 app.set("view engine", "html");
 nunjucks.configure("views", {
   express: app,
@@ -73,3 +73,5 @@ app.use((err, req, res, next) => {
 app.listen(app.get("port"), () => {
   console.log(app.get("port"), "번 포트에서 대기중");
 });
+
+module.exports = app;

@@ -85,8 +85,6 @@ app.use(function (err, req, res, next) {
   res.render("error");
 });
 
-module.exports = app;
-
 app.get("*", async (req, res, next) => {
   try {
     const _comments = await Student.findAll({
@@ -100,3 +98,5 @@ app.get("*", async (req, res, next) => {
     next(err);
   }
 });
+
+module.exports = app;

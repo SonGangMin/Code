@@ -1,4 +1,4 @@
-const { isLoggedIn, isNotLoggedIn } = require("../middlewares");
+const { isLoggedIn, isNotLoggedIn } = require("./");
 
 describe("isLoggedIn", () => {
   const res = {
@@ -7,22 +7,22 @@ describe("isLoggedIn", () => {
   };
   const next = jest.fn();
 
-  test("로그인이 되어 있으면 isLoggedIn이 next함수 호출", () => {
+  test("로그인 되어있으면 isLoggedIn이 next를 호출해야 함", () => {
     const req = {
       isAuthenticated: jest.fn(() => true),
     };
-
     isLoggedIn(req, res, next);
     expect(next).toBeCalledTimes(1);
   });
 
-  test("로그인이 되어 있지 않으면 isLoggedIn이 에러를 호출함.", () => {
+  test("로그인 되어있지 않으면 isLoggedIn이 에러를 응답해야 함", () => {
     const req = {
       isAuthenticated: jest.fn(() => false),
     };
     isLoggedIn(req, res, next);
     expect(res.status).toBeCalledWith(403);
     expect(res.send).toBeCalledWith("로그인 필요");
+    address;
   });
 });
 
@@ -32,7 +32,7 @@ describe("isNotLoggedIn", () => {
   };
   const next = jest.fn();
 
-  test("로그인이 되어 있으면 isNotLoggedIn이 에러를 호출함", () => {
+  test("로그인 되어있으면 isNotLoggedIn이 에러를 응답해야 함", () => {
     const req = {
       isAuthenticated: jest.fn(() => true),
     };
@@ -41,11 +41,11 @@ describe("isNotLoggedIn", () => {
     expect(res.redirect).toBeCalledWith(`/?error=${message}`);
   });
 
-  test("로그인이 않되어 있으면 isNotLoggedIn이 next 호출", () => {
+  test("로그인 되어있지 않으면 isNotLoggedIn이 next를 호출해야 함", () => {
     const req = {
       isAuthenticated: jest.fn(() => false),
     };
     isNotLoggedIn(req, res, next);
-    expect(next).toBeCalledTimes(1);
+    expect(next).toHaveBeenCalledTimes(1);
   });
 });
