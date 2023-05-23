@@ -1,7 +1,15 @@
 .App {
   text-align: center;
 }
-
+html,
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: lightblue;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,12 +43,4 @@
   to {
     transform: rotate(360deg);
   }
-}
-
-.react {
-  background: aqua;
-  color: black;
-  font-size: 48px;
-  font-weight: bold;
-  padding: 16px;
 }
