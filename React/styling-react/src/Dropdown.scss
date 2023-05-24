@@ -1,0 +1,28 @@
+// SCSS 함수 정의
+@function calculateDropdownWidth($itemCount) {
+  $itemWidth: 120px; // 각 항목의 너비
+  $padding: 10px; // 좌우 여백
+
+  @return $itemCount * ($itemWidth + 2 * $padding);
+}
+
+// 풀다운 메뉴 스타일
+.dropdown {
+  position: relative;
+
+  &-toggle {
+    // 풀다운 토글 버튼 스타일
+  }
+
+  &-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: calculateDropdownWidth(4); // 함수 호출을 통해 너비 계산
+    // 풀다운 메뉴 스타일
+  }
+
+  &-item {
+    // 풀다운 메뉴 항목 스타일
+  }
+}

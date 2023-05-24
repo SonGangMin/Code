@@ -1,19 +1,51 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 
-export default class EventPractice extends Component {
-  render() {
-    return (
-      <div>
-        <h2>이벤트 연습</h2>
-        <input
-          type={"text"}
-          name="message"
-          placeholder="아무거나입력"
-          onChange={(e) => {
-            console.log(e.target.value);
-          }}
-        />
-      </div>
-    );
-  }
-}
+const EventPractice = () => {
+  const [form, setForm] = useState({
+    username: "",
+    message: "",
+  });
+  const { username, message } = form;
+  const onChange = (e) => {
+    const nextForm = {
+      ...form,
+      [e.target.name]: e.target.value,
+    };
+    setForm(nextForm);
+  };
+  const onClick = () => {
+    alert(username + ":" + message);
+    setForm({
+      username: username,
+      message: "",
+    });
+  };
+  const onKeyPress = (e) => {
+    if (e.key === "Enter") {
+      onClick();
+    }
+  };
+  return (
+    <div>
+      <h2>이벤트연습</h2>
+      <input
+        type="text"
+        name="username"
+        placeholder="사용자명"
+        value={username}
+        onChange={onChange}
+      />
+      <input
+        type="text"
+        name="message"
+        placeholder="내용"
+        value={message}
+        onChange={onChange}
+        onKeyPress={onKeyPress}
+      />
+      <button onClick={onClick}>확인</button>
+    </div>
+  );
+};
+
+export default EventPractice;

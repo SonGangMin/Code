@@ -4,6 +4,7 @@ import { useState } from "react";
 import Reducer from "./reducer";
 import InputReducer from "./inputReducer";
 import Average from "./Average";
+import Info from "./Info";
 
 function App() {
   const [visible, setVisible] = useState(false);
@@ -28,6 +29,9 @@ function App() {
       <hr />
       <h1>Average</h1>
       <Average />
+      <hr />
+      <h1>커스텀훅</h1>
+      <Info />
     </div>
   );
 }
