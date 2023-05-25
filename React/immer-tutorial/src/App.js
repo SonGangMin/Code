@@ -1,5 +1,7 @@
 import { useRef, useCallback, useState } from "react";
+import { produce } from "immer";
 import "./App.css";
+import Person from "./Person";
 
 const App = () => {
   const nextId = useRef(1);
@@ -9,16 +11,14 @@ const App = () => {
     uselessValue: null,
   });
 
-  const onChange = useCallback(
-    (e) => {
-      const { name, value } = e.target;
-      setForm({
-        ...form,
-        [name]: value,
-      });
-    },
-    [form]
-  );
+  const onChange = useCallback((e) => {
+    const { name, value } = e.target;
+    setForm(
+      produce((draft) => {
+        draft[name] = value;
+      })
+    );
+  }, []);
   const onSubmit = useCallback(
     (e) => {
       e.preventDefault();
@@ -27,27 +27,29 @@ const App = () => {
         name: form.name,
         username: form.username,
       };
-      setData({
-        ...data,
-        array: data.array.concat(info),
-      });
+      setData(
+        produce((draft) => {
+          draft.array.push(info);
+        })
+      );
       setForm({
         name: "",
         username: "",
       });
       nextId.current += 1;
     },
-    [data, form.name, form.username]
+    [form.name, form.username]
   );
-  const onRemove = useCallback(
-    (id) => {
-      setData({
-        ...data,
-        array: data.array.filter((info) => info.id !== id),
-      });
-    },
-    [data]
-  );
+  const onRemove = useCallback((id) => {
+    setData(
+      produce((draft) => {
+        draft.array.splice(
+          draft.array.findIndex((info) => info.id === id),
+          1
+        );
+      })
+    );
+  }, []);
   return (
     <div>
       <form onSubmit={onSubmit}>
@@ -63,13 +65,16 @@ const App = () => {
           value={form.name}
           onChange={onChange}
         />
+        <Person />
+
         <button type="submit">등록</button>
       </form>
       <div>
         <ul>
           {data.array.map((info) => (
-            <li key={info.id} onClick={() => onRemove(info.id)}>
+            <li key={info.id}>
               {info.username} ({info.name})
+              <button onClick={() => onRemove(info.id)}>삭제</button>
             </li>
           ))}
         </ul>
