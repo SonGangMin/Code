@@ -8,7 +8,7 @@ import rootReducer from "./modules";
 import { Provider } from "react-redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 const store = createStore(rootReducer, composeWithDevTools());
-
+console.log("dddddddddddddddd", store);
 ReactDOM.render(
   <Provider store={store}>
     <App />
