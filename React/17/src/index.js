@@ -1,30 +1,33 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import { applyMiddleware, createStore } from "redux";
-import { Provider } from "react-redux";
-import { composeWithDevTools } from "redux-devtools-extension";
-import "./index.css";
-import App from "./App";
-import rootReducer, { rootSaga } from "./modules";
-import createSagaMiddleware from "redux-saga";
-import { BrowserRouter } from "react-router-dom";
-import { createLogger } from "redux-logger";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import './index.css';
+import App from './App';
+import rootReducer, { rootSaga } from './modules';
+// import loggerMiddleware from './lib/loggerMiddleware';
+import { createLogger } from 'redux-logger';
+import ReduxThunk from 'redux-thunk';
+import createSagaMiddleware from 'redux-saga';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import { BrowserRouter } from 'react-router-dom';
 
-const logger = createLogger();
+// const logger = createLogger();
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(
   rootReducer,
-  composeWithDevTools(applyMiddleware(sagaMiddleware))
+  composeWithDevTools(applyMiddleware( ReduxThunk, sagaMiddleware))
 );
-const root = ReactDOM.createRoot(document.getElementById("root"));
 sagaMiddleware.run(rootSaga);
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </Provider>
+  <Provider store={store}>
+    <BrowserRouter>
+    <App />
+    </BrowserRouter>
+  </Provider>
   </React.StrictMode>
 );

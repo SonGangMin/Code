@@ -1,23 +1,26 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import User from "../components/User";
-import { Preloader } from "../lib/PreloadContext";
-import { getUser } from "../modules/users";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux"
+import {getUser} from '../modules/user';
+import User from '../components/User';
 
-const UserContainer = ({ id }) => {
-  const user = useSelector((state) => state.users.user);
-  const dispatch = useDispatch();
+const UserContainer = ({id}) =>{
+    const user= useSelector(state => state.user.user);
+    const dispatch = useDispatch();
+    console.log("user-11111111>", user.id, parseInt(id, 10));
 
-  useEffect(() => {
-    if (user && user.id === parseInt(id, 10)) return;
-    dispatch(getUser(id));
-  }, [dispatch, id, user]);
+    // if(!user){
+    //     return dispatch(getUser(id))
+    // }
 
-  //   if (!user) {
-  //     return <Preloader resolve={() => dispatch(getUser(id))} />;
-  //   }
+    useEffect(()=> {
+        if(user.id === parseInt(id, 10)) return;
+        console.log("user-222222222>", user);
+        dispatch(getUser(id));
+    });
 
-  return <User user={user} />;
-};
+    console.log("user-33333333->", user);
+
+    return <User user={user}/>
+}
 
 export default UserContainer;

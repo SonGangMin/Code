@@ -1,7 +1,7 @@
-import React from "react";
-import { connect } from "react-redux";
-import Sample from "../components/Sample";
-import { getPost, getUsers } from "../modules/sample";
+import React from 'react';
+import { connect } from 'react-redux';
+import Sample from '../components/Sample';
+import { getPost, getUsers } from '../modules/sample';
 
 const { useEffect } = React;
 const SampleContainer = ({
@@ -10,7 +10,7 @@ const SampleContainer = ({
   post,
   users,
   loadingPost,
-  loadingUsers,
+  loadingUsers
 }) => {
   // 클래스 형태 컴포넌트였더라면, componentDidMount
   useEffect(() => {
@@ -40,11 +40,11 @@ export default connect(
   ({ sample, loading }) => ({
     post: sample.post,
     users: sample.users,
-    loadingPost: loading["sample/GET_POST"],
-    loadingUsers: loading["sample/GET_USERS"],
+    loadingPost: loading['sample/GET_POST'],
+    loadingUsers: loading['sample/GET_USERS']
   }),
   {
     getPost,
-    getUsers,
+    getUsers
   }
 )(SampleContainer);

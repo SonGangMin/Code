@@ -1,14 +1,13 @@
-import { Route, Routes } from "react-router-dom";
-import UserContainer from "../containers/UserContainer";
-import UserPage from "./UserPage";
+import {Route, Routes} from 'react-router-dom';
+import UsersContainer from '../containers/UsersContainer';
+import UserPage from './UserPage';
 
-const UsersPage = () => {
-  return (
-    <>
-      <UserContainer />
-      <UserPage />
-    </>
-  );
-};
+const UsersPage = ()=>{
+    return (
+        <>
+        <UsersContainer />
+        </>
+    )
+}
 
 export default UsersPage;

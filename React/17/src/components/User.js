@@ -1,19 +1,18 @@
-import React from "react";
+const User = ({user}) => {
+    // JSON.stringify(user);
+    const {email, name, username} = user;
+    // console.log("User->", email);
 
-const User = ({ user }) => {
-  console.log("ddddddddddddddd", user);
-  const { email, name, username } = user;
-  return (
-    <div>
-      <h1>
-        {username}({name})
-      </h1>
-      <p>
-        <b>email: </b>
-        {email}
-      </p>
-    </div>
-  );
-};
+    return (
+        <div>
+            <h1>
+             {username} ({user.name})
+            </h1>
+            <p>
+                 <b>email : </b> {user.email}
+            </p>
+        </div>
+    )
+}
 
 export default User;

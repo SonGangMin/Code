@@ -1,22 +1,22 @@
-import React from "react";
-import CounterContainer from "./containers/CounterContainer";
-import SampleContainer from "./containers/SampleContainer";
-import TodosContainer from "./containers/TodosContainer";
-import UserContainer from "./containers/UserContainer";
-import UsersPage from "./pages/UsersPage";
-import { Route, Routes } from "react-router-dom";
-import { useParams } from "react-router-dom";
+import React from 'react';
+import CounterContainer from './containers/CounterContainer';
+import SampleContainer from './containers/SampleContainer';
+import UsersPage from './pages/UsersPage';
+import {Route, Routes} from "react-router-dom";
+import UserPage from "./pages/UserPage";
 
 const App = () => {
-  // const { id } = useParams();
   return (
     <div>
-      <CounterContainer />
+      {/* <CounterContainer />
       <hr />
-      <SampleContainer />
-      <hr />
-      dddddddddddd
-      <UserContainer id={1} email={1} />
+      <SampleContainer /> */}
+        <UsersPage/>
+        <Routes>
+            <Route path="/users/:id" element={<UserPage/>} />
+        </Routes>
+
+
     </div>
   );
 };
