@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "../../../node_modules/react-router-dom/dist/index";
+
 import Button from "../common/Button";
 import palette from "../../lib/styles/palette";
+import { Link } from "react-router-dom";
 
 const ButtonWithMarginTop = styled(Button)`
   margin-top: 1rem;
@@ -44,27 +45,38 @@ const Footer = styled.div`
   }
 `;
 
+const ErrorMessage = styled.div`
+  color: red;
+  text-align: center;
+  font-size: 0.875rem;
+  margin-top: 1rem;
+`;
+
 const textMap = {
   login: "로그인",
   register: "회원가입",
 };
 
-const AuthForm = ({ type }) => {
+const AuthForm = ({ type, form, onChange, onSubmit, error }) => {
   const text = textMap[type];
   return (
     <AuthFormBlock>
       <h3>{text}</h3>
-      <form>
+      <form onSubmit={onSubmit}>
         <StyledInput
           autoComplete="username"
           name="username"
           placeholder="아이디"
+          onChange={onChange}
+          value={form.username}
         />
         <StyledInput
           autoComplete="new-password"
           name="password"
           placeholder="비밀번호"
           type="password"
+          onChange={onChange}
+          value={form.password}
         />
         {type === "register" && (
           <StyledInput
@@ -72,9 +84,11 @@ const AuthForm = ({ type }) => {
             name="passwordConfirm"
             placeholder="비밀번호확인"
             type="password"
+            onChange={onChange}
+            value={form.passwordConfirm}
           />
         )}
-
+        {error && <ErrorMessage>{error}</ErrorMessage>}
         <ButtonWithMarginTop cyan fullWidth style={{ marginTop: "1rem" }}>
           {text}
         </ButtonWithMarginTop>

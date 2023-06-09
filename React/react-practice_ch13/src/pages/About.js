@@ -1,10 +1,10 @@
-import React from "react";
-import { useSearchParams } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useSearchParams, useNavigate } from "react-router-dom";
 
 const About = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const detail = searchParams.get("detail");
-  const mode = searchParams.get("mode");
+  const mode = searchParams.get("mode") || 0;
 
   const onToggleDetail = () => {
     setSearchParams({ mode, detail: detail === "true" ? false : true });
@@ -15,15 +15,25 @@ const About = () => {
     setSearchParams({ mode: nextMode, detail });
   };
 
-  //   const location = useLocation();
+  const navigate = useNavigate();
+  const goNaver = () => {
+    navigate("https://www.naver.com", { replace: true });
+  };
+
+  // useEffect(() => {
+  //   const nextMode = mode === null ? 1 : parseInt(mode) + 1;
+  //   setSearchParams({ mode: nextMode, detail });
+  // }, [mode]);
+
   return (
     <div>
       <h1>소개</h1>
       <p>리액트 라우터를 사용해 보는 프로젝트입니다.</p>
-      <p>detail:{detail}</p>
-      <p>mode:{mode}</p>
-      <button onClick={onToggleDetail}>Toggledetail</button>
-      <button onClick={onIncreaseMode}>mode+1</button>
+      <p>detail: {detail}</p>
+      <p>mode: {mode}</p>
+      <button onClick={onToggleDetail}>Toggle detail</button>
+      <button onClick={onIncreaseMode}>Increase mode</button>
+      <button onClick={goNaver}>네이버</button>
     </div>
   );
 };
