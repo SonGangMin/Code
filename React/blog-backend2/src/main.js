@@ -3,7 +3,7 @@ import Koa from 'koa';
 import Router from 'koa-router';
 import bodyParser from 'koa-bodyparser';
 import mongoose from 'mongoose';
-import cors from 'koa-cors';
+import cors from '@koa/cors';
 
 import api from './api';
 import jwtMiddleware from './lib/jwtMiddleware';
@@ -29,6 +29,11 @@ router.use('/api', api.routes()); // api 라우트 적용
 // 라우터 적용 전에 bodyParser 적용
 app.use(bodyParser());
 app.use(jwtMiddleware);
+const corsOptions = {
+  origin: 'http://localhost:3000', // 클라이언트 도메인
+  optionsSuccessStatus: 200, // Some legacy browsers (IE11, various SmartTVs) choke on 204
+};
+app.use(cors(corsOptions));
 
 // let corsOptions = {
 //   origin: '*',
@@ -39,7 +44,7 @@ app.use(jwtMiddleware);
 app.use(router.routes()).use(router.allowedMethods());
 
 // PORT 가 지정되어있지 않다면 4000 을 사용
-const port = 4000;
+const port = 3005;
 app.listen(port, () => {
   console.log('Listening to port %d', port);
 });
