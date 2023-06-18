@@ -7,7 +7,7 @@
     {% for chat in chats %} {% if chat.user === user %}
     <div class="mine" style="color: {{chat.user}}">
       <div>{{chat.user}}</div>
-      {% if chat.gif %}}
+      {% if chat.gif %}
       <img src="/gif/{{chat.gif}}" />
       {% else %}
       <div>{{chat.chat}}</div>
@@ -37,7 +37,7 @@
 </form>
 <script src="/socket.io/socket.io.js"></script>
 <script>
-  const socket = io.connect("http://localhost:8005/chat", {
+  const socket = io.connect("http://localhost:3005/chat", {
     path: "/socket.io",
   });
   socket.emit("join", new URL(location).pathname.split("/").at(-1));
